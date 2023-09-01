@@ -9,45 +9,37 @@
 
 <ng-template #divPais>
 
-    <div class="row">
-        <div class="col-12">
-            <h1>País: <small>{{ pais.name }}</small></h1>
+    <div class="contrainer" *ngFor="let item of pais">
+        <div class="row">
+            <div class="col-12">
+                <h1>País: <small>{{ item.name.common }}</small></h1>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
+        <div class="row">
         
         <div class="col-4">
             <h3>Bandera</h3>
-            <img [src]="pais.flag" class="img-thumbnail" />
+            <img [src]="item.coatOfArms.png" class="img-thumbnail" />
         </div>
 
         <div class="col">
             <h3>Información</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Población</strong> {{ pais.population | number }}
+                    <strong>Población</strong> {{ item.population | number }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código numérico</strong> {{ pais }}
+                    <strong>Código numérico</strong> {{item.idd.root}}{{ item.idd.suffixes }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código alpha3</strong> {{ pais.altSpellings }}
+                    <strong>Código alpha3</strong> {{ item.altSpellings }}
                 </li>
             </ul>
         </div>
 
 
     </div>
-
-
-
-    <!-- <pre class="mt-5">
-        {{ pais | json }}
-    </pre> -->
-
-
+    </div>
 </ng-template>
 
-
-<button (click)="presion()" >Presiona</button>

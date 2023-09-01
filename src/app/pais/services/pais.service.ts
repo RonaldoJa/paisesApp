@@ -27,9 +27,9 @@ export class PaisService {
     return this.http.get<Country>(url);
   }
 
-  getPaisPorAlpha( id: string ):Observable<Country>{
+  getPaisPorAlpha( id: string ):Observable<Country[]>{
     const url = `${ this.apirUrl }/alpha/${ id }`;
-    return this.http.get<Country>( url );
+    return this.http.get<Country[]>( url );
   }
 
 

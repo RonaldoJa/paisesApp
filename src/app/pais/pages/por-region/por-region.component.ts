@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./por-region.component.css']
 })
 export class PorRegionComponent {
+  regiones: string[] = []
 
 }
