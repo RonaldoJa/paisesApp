@@ -22,14 +22,14 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
-  getPaisCapital(termino: string): Observable<Country> {
-    const url = `${this.apirUrl}/alpha/${termino}`;
-    return this.http.get<Country>(url);
-  }
-
   getPaisPorAlpha( id: string ):Observable<Country[]>{
     const url = `${ this.apirUrl }/alpha/${ id }`;
     return this.http.get<Country[]>( url );
+  }
+
+  buscarRegion( termino: string ) {
+    const url = `${this.apirUrl}/region/${termino}`;
+    return this.http.get<Country[]>(url);
   }
 
 
